@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@if (Session["Email"] != null)
+{
+    <text>
+        Welcome @Session["Email"].ToString();
+    </text>
+}

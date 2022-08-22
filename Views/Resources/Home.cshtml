@@ -1,0 +1,69 @@
+﻿@model IEnumerable<StaffManagementSystem.Models.ResourcesTb>
+
+@{
+    ViewBag.Title = "Home";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        <h2>Home</h2>
+
+        <p>
+            <button class="btn btn-small" style="background-color:green; color:white;">@Html.ActionLink("Create New", "Create")</button>
+</p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResourcesTbName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResourcesTbDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpdatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpdatedOn)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResourcesTbName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResourcesTbDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpdatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpdatedOn)
+                    </td>
+                    <td>
+                        <button class="btn btn-small" style="background-color:green; color:white;">@Html.ActionLink("Edit", "Edit", new { id = item.ResourcesTbId })</button>
+
+                        <button class="btn btn-small" style="background-color:green; color:white;">@Html.ActionLink("Delete", "Delete", new { id = item.ResourcesTbId })</button>
+</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

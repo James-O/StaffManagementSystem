@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StaffMgtSysDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DepartmentTb">
+    <Key>
+      <PropertyRef Name="DepartmentTbId" />
+    </Key>
+    <Property Name="DepartmentTbId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeparmentTbName" Type="varchar(max)" />
+    <Property Name="departmentTbDescription" Type="varchar(max)" />
+    <Property Name="createdBy" Type="varchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedBy" Type="varchar(max)" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResourcesTb">
+    <Key>
+      <PropertyRef Name="ResourcesTbId" />
+    </Key>
+    <Property Name="ResourcesTbId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ResourcesTbName" Type="varchar(max)" Nullable="false" />
+    <Property Name="ResourcesTbDescription" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="varchar(max)" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolesTb">
+    <Key>
+      <PropertyRef Name="RolesTbId" />
+    </Key>
+    <Property Name="RolesTbId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleTbName" Type="varchar(max)" Nullable="false" />
+    <Property Name="RoleTbDescription" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="varchar(max)" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StaffTb">
+    <Key>
+      <PropertyRef Name="StaffId" />
+    </Key>
+    <Property Name="StaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar(max)" />
+    <Property Name="LastName" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Password" Type="varchar(max)" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="varchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="varchar(max)" />
+    <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsFirstLogOn" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="StaffMgtSysDbModelStoreContainer">
+    <EntitySet Name="DepartmentTb" EntityType="Self.DepartmentTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResourcesTb" EntityType="Self.ResourcesTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolesTb" EntityType="Self.RolesTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StaffTb" EntityType="Self.StaffTb" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

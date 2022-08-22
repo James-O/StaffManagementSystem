@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StaffMgtSysDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DepartmentTb">
+          <Key>
+            <PropertyRef Name="DepartmentTbId" />
+          </Key>
+          <Property Name="DepartmentTbId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeparmentTbName" Type="varchar(max)" />
+          <Property Name="departmentTbDescription" Type="varchar(max)" />
+          <Property Name="createdBy" Type="varchar(max)" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="varchar(max)" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResourcesTb">
+          <Key>
+            <PropertyRef Name="ResourcesTbId" />
+          </Key>
+          <Property Name="ResourcesTbId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResourcesTbName" Type="varchar(max)" Nullable="false" />
+          <Property Name="ResourcesTbDescription" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar(max)" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolesTb">
+          <Key>
+            <PropertyRef Name="RolesTbId" />
+          </Key>
+          <Property Name="RolesTbId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleTbName" Type="varchar(max)" Nullable="false" />
+          <Property Name="RoleTbDescription" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar(max)" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StaffTb">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="StaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar(max)" />
+          <Property Name="LastName" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="Password" Type="varchar(max)" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="varchar(max)" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar(max)" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="IsFirstLogOn" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="StaffMgtSysDbModelStoreContainer">
+          <EntitySet Name="DepartmentTb" EntityType="Self.DepartmentTb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResourcesTb" EntityType="Self.ResourcesTb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RolesTb" EntityType="Self.RolesTb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StaffTb" EntityType="Self.StaffTb" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StaffMgtSysDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="StaffTb">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Name="StaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsFirstLogOn" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="StaffMgtSysDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="StaffTbs" EntityType="Self.StaffTb" />
+          <EntitySet Name="DepartmentTbs" EntityType="StaffMgtSysDbModel.DepartmentTb" />
+          <EntitySet Name="ResourcesTbs" EntityType="StaffMgtSysDbModel.ResourcesTb" />
+          <EntitySet Name="RolesTbs" EntityType="StaffMgtSysDbModel.RolesTb" />
+        </EntityContainer>
+        <EntityType Name="DepartmentTb">
+          <Key>
+            <PropertyRef Name="DepartmentTbId" />
+          </Key>
+          <Property Name="DepartmentTbId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeparmentTbName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="departmentTbDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="createdBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ResourcesTb">
+          <Key>
+            <PropertyRef Name="ResourcesTbId" />
+          </Key>
+          <Property Name="ResourcesTbId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResourcesTbName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ResourcesTbDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="RolesTb">
+          <Key>
+            <PropertyRef Name="RolesTbId" />
+          </Key>
+          <Property Name="RolesTbId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleTbName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RoleTbDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StaffMgtSysDbModelStoreContainer" CdmEntityContainer="StaffMgtSysDbEntities">
+          <EntitySetMapping Name="StaffTbs">
+            <EntityTypeMapping TypeName="StaffMgtSysDbModel.StaffTb">
+              <MappingFragment StoreEntitySet="StaffTb">
+                <ScalarProperty Name="IsFirstLogOn" ColumnName="IsFirstLogOn" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartmentTbs">
+            <EntityTypeMapping TypeName="StaffMgtSysDbModel.DepartmentTb">
+              <MappingFragment StoreEntitySet="DepartmentTb">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="departmentTbDescription" ColumnName="departmentTbDescription" />
+                <ScalarProperty Name="DeparmentTbName" ColumnName="DeparmentTbName" />
+                <ScalarProperty Name="DepartmentTbId" ColumnName="DepartmentTbId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResourcesTbs">
+            <EntityTypeMapping TypeName="StaffMgtSysDbModel.ResourcesTb">
+              <MappingFragment StoreEntitySet="ResourcesTb">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ResourcesTbDescription" ColumnName="ResourcesTbDescription" />
+                <ScalarProperty Name="ResourcesTbName" ColumnName="ResourcesTbName" />
+                <ScalarProperty Name="ResourcesTbId" ColumnName="ResourcesTbId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolesTbs">
+            <EntityTypeMapping TypeName="StaffMgtSysDbModel.RolesTb">
+              <MappingFragment StoreEntitySet="RolesTb">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="RoleTbDescription" ColumnName="RoleTbDescription" />
+                <ScalarProperty Name="RoleTbName" ColumnName="RoleTbName" />
+                <ScalarProperty Name="RolesTbId" ColumnName="RolesTbId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

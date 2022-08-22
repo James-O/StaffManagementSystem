@@ -1,0 +1,65 @@
+﻿@model StaffManagementSystem.Models.DepartmentsModel
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        
+        @using (Html.BeginForm("Create", "Departments", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Create Departments</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DeparmentTbName, new { htmlAttributes = new { @class = "form-control", placeholder="Department Name"} })
+                        @Html.ValidationMessageFor(model => model.DeparmentTbName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                   
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.departmentTbDescription, new { htmlAttributes = new { @class = "form-control", placeholder = "Department Description" } })
+                        @Html.ValidationMessageFor(model => model.departmentTbDescription, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.createdBy, new { htmlAttributes = new { @class = "form-control" , placeholder = "Created by" } })
+                        @Html.ValidationMessageFor(model => model.createdBy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.UpdatedBy, new { htmlAttributes = new { @class = "form-control" , placeholder = "Updated by" } })
+                        @Html.ValidationMessageFor(model => model.UpdatedBy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Department")
+        </div>
+    </div>
+</div>
+
+
+
